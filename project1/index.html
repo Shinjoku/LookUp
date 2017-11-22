@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        
+        <!-- Styles -->
+        <link rel="stylesheet" href="static/css/style.css" type="text/css" />        
+    </head>
+    <body onLoad="createCanvas()" onResize="createCanvas()">
+		<script>
+			window.fbAsyncInit = function() {
+				FB.init({
+				appId            : '1218732208181087',
+				autoLogAppEvents : true,
+				xfbml            : true,
+				version          : 'v2.11'
+				});
+			};
+			(function(d, s, id){
+				var js, fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id)) {return;}
+				js = d.createElement(s); js.id = id;
+				js.src = "https://connect.facebook.net/en_US/sdk.js";
+				fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+		</script>
+        <canvas id="myCanvas">
+            Seu browser não suporta o canvas!
+        </canvas>
+        
+        <!-- Scripts -->
+        <script type="text/javascript" src="static/js/helpers.js"></script>
+        <script type="text/javascript" src="static/js/game_objects.js"></script>
+        <script type="text/javascript" src="static/js/player.js"></script>
+        <script type="text/javascript" src="static/js/object_col.js"></script>
+        <script type="text/javascript" src="static/js/main.js"></script>
+    </body>
+	
+</html>

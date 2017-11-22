@@ -12,7 +12,7 @@ var c = document.getElementById("myCanvas")     // Canvas
 var ctx = c.getContext("2d")                    // Canvav's context
 var winWidth                                    // Window's width
 var winHeight                                   // Window's height
-var buildlist = ['static/img/build.png','static/img/build1_1.png','static/img/build2_2.jpeg']	// Building image list
+var buildlist = ['static/img/build.png','static/img/build1_1.png','static/img/build2_2.jpg']	// Building image list
 var imageslist = ['static/img/street2.png', 'static/img/street3.jpg', 'static/img/street4.jpg']
 var background = new Image()                    
 var centerWidth
@@ -20,7 +20,10 @@ var centerHeight
 var vetorCena = [ menu, loop, endGame]
 var instrucao = new Image()
 var tituloimg = new Image()
+var predio = new Image()
 
+
+predio.src = buildlist[2]
 //background Fill
 background.src = imageslist[level];
 background.onload = function(){
@@ -69,6 +72,7 @@ function loop() {
 	
 	// Draw the game objects
 	ctx.drawImage(background, 0, 0, winWidth, winHeight)    // Background
+	build_draw();
     p1.draw()                                               // Player's character
     collection.draw()
     collection.isColliding(p1)
@@ -128,9 +132,12 @@ function KeyDown(evt) {
 
 function menu(){
 	
+	
+	ctx.clearRect(0, 0, winWidth, winHeight)
 	instrucao.src = 'static/img/instrucao1.png'
 	tituloimg.src = 'static/img/titulo.png'
 	ctx.drawImage(background, 0, 0, winWidth, winHeight)    // Background
+	build_draw()
 	ctx.beginPath();
 	ctx.arc(winWidth/2,winHeight/2,winWidth/30,0,2*Math.PI);
 	ctx.stroke();
@@ -167,6 +174,13 @@ function endGame(){
 			}, {scope: 'publish_actions'});*/
 	window.requestAnimationFrame(vetorCena[count])
 
+}
+
+function build_draw(){
+	ctx.drawImage(predio, BUILDING_WIDTH*0, winHeight/4, BUILDING_WIDTH/2, winHeight/1.8)
+	ctx.drawImage(predio, BUILDING_WIDTH*1, winHeight/4, BUILDING_WIDTH/2, winHeight/1.8)
+	ctx.drawImage(predio, BUILDING_WIDTH*2, winHeight/4, BUILDING_WIDTH/2, winHeight/1.8)
+	ctx.drawImage(predio, BUILDING_WIDTH*3, winHeight/4, BUILDING_WIDTH/2, winHeight/1.8)
 }
 //Main
 

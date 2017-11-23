@@ -31,14 +31,17 @@ function Person() {
     
     GameObject.call(this)
     
-    let block = random_int(0, 1)
+    let block = random_int(0, 3)
     
-    this.pos.x = centerWidth* block + BUILDING_WIDTH
+	if(block == 0){
+		block = 0.1
+	}
+    this.pos.x = BUILDING_WIDTH*block
 	//max + block * BUILDING_WIDTH - (this.tam / 2)
     this.pos.y = window.innerHeight * 0.25
     
     this.tam = 30
-    this.img.src = 'static/img/person.jpg'
+    this.img.src = 'static/img/people.png'
     
     // Increases player's points counter
     this.onCollision = function(){
@@ -53,9 +56,12 @@ function Wreckage() {
     
     GameObject.call(this)
     
-    let block = random_int(0, 1)
-
-    this.pos.x = centerWidth
+    let block = random_int(0, 3)
+    
+	if(block == 0){
+		block = 0.1
+	}
+    this.pos.x = BUILDING_WIDTH*block
     // window.innerWidth / 2 - (block * BUILDING_WIDTH) - (this.tam / 2)
     this.pos.y = window.innerHeight * 0.25
     

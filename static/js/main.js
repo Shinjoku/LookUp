@@ -4,7 +4,7 @@
 // Global variables
 let level = 0       // User's level
 let falling = []
-let levelPoints = [1,1, 1, 1]
+let levelPoints = [2,3, 4, 5]
 let count = 0
 
 // Canvas

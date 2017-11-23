@@ -4,7 +4,7 @@ function Player() {
     
     this.tam = 80
     this.img.src = 'static/img/Firemen.png'
-    this.pos.x = max - 2 * this.tam / 2,
+    this.pos.x = max - (2 * this.tam) / 2,
     this.pos.y = window.innerHeight * 0.75
     this.life = LIFE_POINTS
     this.points = 0

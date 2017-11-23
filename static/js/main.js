@@ -167,6 +167,8 @@ function endGame(){
 	ctx.fillText("Fim de jogo",(winWidth/2) - (winWidth/40),winHeight/2 - (winHeight/50) );
 	ctx.fillText("Precione SPACE", (winWidth/2) - (winWidth/40), (winHeight/2))
 	ctx.fillText("para reiniciar", (winWidth/2) - (winWidth/40), (winHeight/2)+(winHeight/40))
+	ctx.drawImage(instrucao, (winWidth/2.7)  , (winHeight/1.6), (winWidth/4), (winHeight/3))
+	ctx.drawImage(tituloimg, (winWidth/2.7)  , (winHeight/50), (winWidth/4), (winHeight/3))
 	/*// API do Facebook
           FB.login(function(){
 				// Note: The call will only work if you accept the permission request
